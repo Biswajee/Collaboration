@@ -20,15 +20,20 @@
             <div class="form-group">
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="upload1">
-                <label class="custom-file-label" for="upload1">Choose file</label>
+                <label class="custom-file-label" for="upload1" id="label-upload1" onclick="choose()">Choose file</label>
               </div>
             </div>
             <div class="form-group">
               <button type="button" id="add" class="btn btn-outline-warning btn-sm" title="Add another file"><i class="fa fa-plus"></i></button>
             </div>
             <div class="form-group">
-            <button type="Submit" class="btn btn-outline-success" style="float: right;">Submit</button>
+            <button type="Submit" class="btn btn-outline-success" style="float: right;">Create</button>
             </div>
+            <script>
+              document.getElementById('upload1').onchange = function choose() {
+                document.getElementById('label-upload1').innerHTML = this.value;
+              };
+            </script>
           </form>
         </div>
       </div>
