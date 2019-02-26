@@ -1,4 +1,6 @@
 certifi==2018.11.29
 Django==1.11.10
+django-mysql==2.4.1
+mysqlclient==1.4.2.post1
 pytz==2018.9
 wincertstore==0.2
