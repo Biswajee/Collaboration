@@ -19,8 +19,8 @@
             </div>
             <div class="form-group">
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="upload1">
-                <label class="custom-file-label" for="upload1" id="label-upload1">Choose file</label>
+                <input type="file" class="custom-file-input" id="fileid1">
+                <label class="custom-file-label" for="fileid1" id="label-fileid1">Choose file</label>
               </div>
             </div>
             <div id="upload-form">
@@ -32,10 +32,10 @@
             <button type="Submit" class="btn btn-outline-success" style="float: right;">Create</button>
             </div>
             <script>
-              document.getElementById('upload1').onchange = function () {
+                document.getElementById('fileid1').onchange = function () {
                 var f = this.value;
                 f = f.replace(/.*[\/\\]/, '');
-                document.getElementById('label-upload1').innerHTML = f;
+                document.getElementById('label-fileid1').innerHTML = f;
               };
             </script>
           </form>
