@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.files.storage import FileSystemStorage
 
 def index(request):
     return render(request, 'dashboard/index.html')
@@ -8,7 +9,11 @@ def imupload(request):
         if request.method == 'POST':
             title = request.POST['title']
             desc = request.POST['desc']
-            img = request.FILES['image']
+            img = request.FILES['f1']
+            print(img.name)
+            print(img.size)
+            fs = FileSystemStorage()
+            fs.save(img.name, img)
 
             im = imgdb()
             im.title = title

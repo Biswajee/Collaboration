@@ -8,6 +8,7 @@ function addelement() {
   context.className = 'custom-file';
   var inp = document.createElement('input');
   inp.type = 'file';
+  inp.name = 'f'+i;
   inp.id = 'fileid'+i;
   inp.className = 'custom-file-input';
   var lb = document.createElement('label');

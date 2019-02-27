@@ -12,15 +12,15 @@
             {% csrf_token %}
             <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" value="" placeholder="Enter title" class="form-control" />
+            <input type="text" name="title" placeholder="Enter title" class="form-control" />
             </div>
             <div class="form-group">
             <label for="description">Description</label>
-            <textarea name="description" rows="8" cols="80" class="form-control"></textarea>
+            <textarea name="desc" rows="8" cols="80" class="form-control"></textarea>
             </div>
             <div class="form-group">
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="fileid1">
+                <input type="file" name="f1" class="custom-file-input" id="fileid1">
                 <label class="custom-file-label" for="fileid1" id="label-fileid1">Choose file</label>
               </div>
             </div>
