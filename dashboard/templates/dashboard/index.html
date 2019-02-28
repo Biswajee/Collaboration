@@ -12,8 +12,13 @@
 
           {% load crispy_forms_tags %}
           <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form|crispy }}
+            <div id="upload-form">
+              {% csrf_token %}
+              {{ form|crispy }}
+            </div>
+            <div class="form-group">
+              <button type="button" id="add" class="btn btn-outline-warning btn-sm" title="Add another file" onclick="addelement()"><i class="fa fa-plus"></i></button>
+            </div>
             <div class="form-group">
             <button type="Submit" class="btn btn-outline-success" style="float: right;">Create</button>
             </div>
