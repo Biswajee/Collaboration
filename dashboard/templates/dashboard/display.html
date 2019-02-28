@@ -5,7 +5,7 @@
     <tbody>
       {% for image in images %}
       <tr>
-        <td> <img src="{{ image.url }}" alt="{{ image.title }}"></td>
+        <td> <img src="/media/{{ image.image_url }}" alt="{{ image.title }}" style="width: 200px;"></td>
       </tr>
       {% endfor %}
     </tbody>
