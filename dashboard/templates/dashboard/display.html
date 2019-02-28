@@ -1,30 +1,58 @@
 {% extends "dashboard/header.html" %}
 
 {% block content %}
-  <table class="table">
-    <tbody>
+<div class="container" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          Image display section
+        </div>
+        <div class="card-body">
 
-      <tr>
-        {% if images.image_url_1 %}
-        <td> <img src="/media/{{ images.image_url_1 }}" alt="{{ images.title }}" style="width: 200px;"></td>
-        {% endif %}
-        {% if images.image_url_2 %}
-        <td> <img src="/media/{{ images.image_url_2 }}" alt="{{ images.title }}" style="width: 200px;"></td>
-        {% endif %}
-        {% if images.image_url_3 %}
-        <td> <img src="/media/{{ images.image_url_3 }}" alt="{{ images.title }}" style="width: 200px;"></td>
-        {% endif %}
-        {% if images.image_url_4 %}
-        <td> <img src="/media/{{ images.image_url_4 }}" alt="{{ images.title }}" style="width: 200px;"></td>
-        {% endif %}
-        {% if images.image_url_5 %}
-        <td> <img src="/media/{{ images.image_url_5 }}" alt="{{ images.title }}" style="width: 200px;"></td>
-        {% endif %}
-        {% if images.image_url_6 %}
-        <td> <img src="/media/{{ images.image_url_6 }}" alt="{{ images.title }}" style="width: 200px;"></td>
-        {% endif %}
-      </tr>
-    </tbody>
+          <div class="row">
+            <div class="col-sm">
+              {% if images.image_url_1 %}
+              <td> <img src="/media/{{ images.image_url_1 }}" alt="{{ images.title }}" style="width: 300px;"></td>
+              {% endif %}
+            </div>
+            <div class="col-sm">
+              {% if images.image_url_2 %}
+              <td> <img src="/media/{{ images.image_url_2 }}" alt="{{ images.title }}" style="width: 300px;"></td>
+              {% endif %}
+            </div>
+            <div class="col-sm">
+              {% if images.image_url_3 %}
+              <td> <img src="/media/{{ images.image_url_3 }}" alt="{{ images.title }}" style="width: 300px;"></td>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              {% if images.image_url_4 %}
+              <td> <img src="/media/{{ images.image_url_4 }}" alt="{{ images.title }}" style="width: 300px;"></td>
+              {% endif %}
+            </div>
+            <div class="col-sm">
+              {% if images.image_url_5 %}
+              <td> <img src="/media/{{ images.image_url_5 }}" alt="{{ images.title }}" style="width: 300px;"></td>
+              {% endif %}
+            </div>
+            <div class="col-md-sm">
+              {% if images.image_url_6 %}
+              <td> <img src="/media/{{ images.image_url_6 }}" alt="{{ images.title }}" style="width: 300px;"></td>
+              {% endif %}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg">
+              <a href="/" class="btn btn-outline-warning" style="float: right;">Go Back</a>
+            </div>
+          </div>
 
-  </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
