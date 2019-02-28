@@ -1,1 +1,8 @@
+# pycache files
 *.pyc
+
+# uploaded media files
+media/
+
+# database migrations
+dashboard/migrations/

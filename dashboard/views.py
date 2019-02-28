@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
-
+from .models import imgdb
 def index(request):
     return render(request, 'dashboard/index.html')
 
@@ -20,5 +20,6 @@ def imupload(request):
             im.desc = desc
             im.impath = img
             im.save()
-    except:
             return render(request, 'dashboard/index.html')
+    except Exception as e:
+            return render(request, 'dashboard/upload_error.html', {'error': str(e)})
