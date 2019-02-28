@@ -10,8 +10,7 @@ The release `v1.0` of the repository contains functionalities where users can up
 
 ### Getting started
 + Clone the repository using
-
-      git clone https://github.com/Biswajee/Collaboration.git
+`git clone https://github.com/Biswajee/Collaboration.git`
 
 + `cd` into the directory `Collaboration` and create a `python` environment
       Using conda:
