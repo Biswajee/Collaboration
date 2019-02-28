@@ -5,6 +5,7 @@ def index(request):
     return render(request, 'dashboard/index.html')
 
 def imupload(request):
+    context = {}
     try:
         if request.method == 'POST':
             title = request.POST['title']
@@ -13,13 +14,18 @@ def imupload(request):
             print(img.name)
             print(img.size)
             fs = FileSystemStorage()
-            fs.save(img.name, img)
+            name = fs.save(img.name, img)
 
+            # saving to database
             im = imgdb()
             im.title = title
             im.desc = desc
             im.impath = img
             im.save()
-            return render(request, 'dashboard/index.html')
+
+            # preparing dictionary for display
+            context['url'] = fs.url(name)
+            return render(request, 'dashboard/display.html', context)
     except Exception as e:
-            return render(request, 'dashboard/upload_error.html', {'error': str(e)})
+            context['error'] = str(e)
+            return render(request, 'dashboard/upload_error.html', context)
