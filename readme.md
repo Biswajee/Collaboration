@@ -41,3 +41,58 @@ Now type in the following: `create database collab;`
 ### Navigation and running
 
 Visit the site on `127.0.0.1:8000` (or any other port you configured it to rum) and fill up the form. Click on `create` button to submit the form and visit a new link `/image_list/` to find a list of your uploaded images.
+
+### Directory structure
+
+The `dashboard` directory contains utility to upload images and display them.
+Static files for website are stored inside `static` directory. The uploaded images are stored in the `media` directory present inside `dashboard` directory.
+
+The Overall directory structure can be viewed as :
+```
+C:.
+│   .gitignore
+│   manage.py
+│   readme.md
+│   requirements.txt
+│
+├───collaboration
+│   │   settings.py
+│   │   urls.py
+│   │   wsgi.py
+│   │   __init__.py
+│   │
+│   └───__pycache__
+│           
+│           
+├───dashboard
+│   │   admin.py
+│   │   apps.py
+│   │   forms.py
+│   │   models.py
+│   │   tests.py
+│   │   urls.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │       
+│   ├───static
+│   │   ├───css
+│   │   └───js
+│   │           essentials.js
+│   │
+│   ├───templates
+│   │   └───dashboard
+│   │       │   display.html
+│   │       │   header.html
+│   │       │   index.html
+│   │       │   upload_error.html
+│   │       │
+│   │       └───includes
+│   └───__pycache__
+│           
+└───media
+```
