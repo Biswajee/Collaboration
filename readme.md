@@ -96,3 +96,7 @@ C:.
 │           
 └───media
 ```
+
+### Release v1.0 demonstration:
+
+![Release v1.0 - Django Image Gallery](https://user-images.githubusercontent.com/26689027/53584818-81d1cc00-3baa-11e9-86a4-3a3dffa8b148.gif)

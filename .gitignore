@@ -6,3 +6,6 @@ media/
 
 # database migrations
 dashboard/migrations/
+
+# skip high quality animation uploads
+*.mp4
