@@ -46,7 +46,8 @@ def imupload(request):
 
 
 def gallery_display(request):
-    images = imgdb.objects.all()
+    images = imgdb.objects.last()
+    print(type(images))
     return render(request, 'dashboard/display.html', {
             'images' : images
     })
