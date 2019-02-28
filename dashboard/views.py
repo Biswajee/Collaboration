@@ -34,8 +34,6 @@ def imupload(request):
             im.impath = img
             im.save()
 
-            # Saving using ModelForm
-
 
             # preparing dictionary for display
             context['url'] = fs.url(name)
