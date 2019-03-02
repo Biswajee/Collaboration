@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.index, name = 'index'),
-    url(r'^image_upload/', views.imupload, name = 'image_upload_to_db'),
+    url(r'^image_upload/', views.im_upload, name = 'upload_images'),
     url(r'^image_list/', views.gallery_display, name = 'image_list'),
 ]
 

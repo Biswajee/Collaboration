@@ -1,0 +1,27 @@
+{% extends "dashboard/header.html" %}
+{% block title %}Choose service{% endblock %}
+{% block content %}
+
+<div class="container" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          Choose an option
+        </div>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col-sm">
+              <a href="image_upload/" class="btn btn-outline-warning" target="_blank">Upload Images</a>
+            </div>
+            <div class="col-sm">
+              <a href="doc/doc_upload/" class="btn btn-outline-success" target="_blank">Upload Documents</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

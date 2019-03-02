@@ -3,7 +3,7 @@
 
 (function() {
   for(start=2;start<=6; start++) {
-    document.getElementById('div_id_image_url_' + start).remove();
+    document.getElementById('div_id_doc_url_' + start).remove();
   }
 })();
 
@@ -16,20 +16,20 @@ function addelement() {
   if (i <= 6) {
     var maindiv = document.createElement('div');
     maindiv.className = 'form-group';
-    maindiv.id = 'div_id_image_url_' + i;
+    maindiv.id = 'div_id_doc_url_' + i;
 
     var lb = document.createElement('label');
-    lb.for = 'div_id_image_url_' + i;
+    lb.for = 'div_id_doc_url_' + i;
     lb.className = 'col-form-label';
-    lb.innerHTML = 'Image url ' + i;
+    lb.innerHTML = 'Document ' + i;
 
     var context = document.createElement('div');
 
     var inp = document.createElement('input');
     inp.type = 'file';
-    inp.name = 'image_url_'+i;
+    inp.name = 'doc_url_'+i;
     inp.className = 'clearablefileinput';
-    inp.id = 'id_image_url_' + i;
+    inp.id = 'id_doc_url_' + i;
 
 
     context.appendChild(inp);

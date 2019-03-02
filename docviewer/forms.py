@@ -1,15 +1,15 @@
 from django import forms
 
-from .models import imgdb
+from .models import documents
 
-class image_upload(forms.ModelForm):
+class doc_upload(forms.ModelForm):
     class Meta:
-        model = imgdb
+        model = documents
         fields = ['title',
                   'description',
-                  'image_url_1',
-                  'image_url_2',
-                  'image_url_3',
-                  'image_url_4',
-                  'image_url_5',
-                  'image_url_6']
+                  'doc_url_1',
+                  'doc_url_2',
+                  'doc_url_3',
+                  'doc_url_4',
+                  'doc_url_5',
+                  'doc_url_6']
