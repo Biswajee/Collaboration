@@ -1,7 +1,7 @@
 ## Collaboration
 
 ### Introduction
-The release `v1.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload.
+The release `v1.1.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload.
 
 ### Prerequisites
 + Django 1.11
@@ -40,7 +40,12 @@ Now type in the following: `create database collab;`
 
 ### Navigation and running
 
-Visit the site on `127.0.0.1:8000` (or any other port you configured it to rum) and fill up the form. Click on `create` button to submit the form and visit a new link `/image_list/` to find a list of your uploaded images.
+**Django image gallery** <br>
+Visit the site on `http://127.0.0.1:8000/image_upload/` (or any other port you configured it to rum) and fill up the form. Click on `create` button to submit the form and visit a new link `/image_list/` to find a list of your uploaded images.
+
+
+**Uploading document and viewing using document viewer** <br>
+Visit the website on `http://127.0.0.1:8000/doc/doc_upload/`. Click on `Create` button to submit the form. The uploaded documents are displayed in a new page. 
 
 ### Directory structure
 
@@ -97,6 +102,6 @@ C:.
 └───media
 ```
 
-### Release v1.0 demonstration:
+### Release v1.0.0 demonstration:
 
-![Release v1.0 - Django Image Gallery](https://user-images.githubusercontent.com/26689027/53584818-81d1cc00-3baa-11e9-86a4-3a3dffa8b148.gif)
+![Release v1.0.0 - Django Image Gallery](https://user-images.githubusercontent.com/26689027/53584818-81d1cc00-3baa-11e9-86a4-3a3dffa8b148.gif)
