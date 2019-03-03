@@ -4,7 +4,7 @@ from .models import slides
 
 class slide_upload(forms.ModelForm):
     class Meta:
-        model = documents
+        model = slides
         fields = ['title',
                   'description',
                   'ppt_url_1',

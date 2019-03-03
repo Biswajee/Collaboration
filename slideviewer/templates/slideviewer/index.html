@@ -1,5 +1,5 @@
-{% extends "docviewer/header.html" %}
-{% block title %}Document Upload{% endblock %}
+{% extends "slideviewer/header.html" %}
+{% block title %}Presentation files Upload{% endblock %}
 {% block content %}
 {% load staticfiles%}
 <div class="container" style="margin-top: 30px;">
@@ -7,7 +7,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-header">
-          Document upload section (upload max. 6 files)
+          Upload presentation files (upload max. 6 files)
         </div>
         <div class="card-body">
 
@@ -31,4 +31,4 @@
   </div>
 </div>
 {% endblock %}
-{% block custom_js %} <script src="{% static 'js/doc_essentials.js' %}"></script> {% endblock %}
+{% block custom_js %} <script src="{% static 'js/ppt_essentials.js' %}"></script> {% endblock %}
