@@ -7,6 +7,7 @@ import json
 def index(request):
     if request.method == 'POST':
         form = slide_upload(request.POST, request.FILES)
+        print(request.FILES)
         if form.is_valid():
             form.save()
             return redirect('/slide/slide_upload')
