@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'dashboard',
     'docviewer',
     'slideviewer',
+    'mediaAPI',
     'django_mysql',
     'crispy_forms'
 ]
