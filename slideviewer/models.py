@@ -22,27 +22,27 @@ class slides(models.Model):
             'title' : self.title,
             'description' : self.description,
             'ppt_1' : {
-                    'url' : str(self.ppt_url_1),
+                    'url' : str(self.ppt_url_1)+".pdf",
                     'type' : self.extension_handler(str(self.ppt_url_1))
             },
             'ppt_2' : {
-                    'url' : str(self.ppt_url_2),
+                    'url' : str(self.ppt_url_2)+".pdf",
                     'type' : self.extension_handler(str(self.ppt_url_2))
             },
             'ppt_3' : {
-                    'url' : str(self.ppt_url_3),
+                    'url' : str(self.ppt_url_3)+".pdf",
                     'type' : self.extension_handler(str(self.ppt_url_3))
             },
             'ppt_4' : {
-                    'url' : str(self.ppt_url_4),
+                    'url' : str(self.ppt_url_4)+".pdf",
                     'type' : self.extension_handler(str(self.ppt_url_4))
             },
             'ppt_5' : {
-                    'url' : str(self.ppt_url_5),
+                    'url' : str(self.ppt_url_5)+".pdf",
                     'type' : self.extension_handler(str(self.ppt_url_5))
             },
             'ppt_6' : {
-                    'url' : str(self.ppt_url_6),
+                    'url' : str(self.ppt_url_6)+".pdf",
                     'type' : self.extension_handler(str(self.ppt_url_6))
             }
         }
