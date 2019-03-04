@@ -25,7 +25,6 @@ def PPTtoPDF(inputFileName, outputFileName, formatType = 32):
         outputFileName = outputFileName[: dot_index] + ".pdf"
         print(outputFileName)
     deck = powerpoint.Presentations.Open(inputFileName)
-    # print(powerpoint.Presentations)
     deck.SaveAs(outputFileName, formatType) # formatType = 32 for ppt to pdf
     deck.Close()
     powerpoint.Quit()
@@ -34,15 +33,16 @@ def PPTtoPDF(inputFileName, outputFileName, formatType = 32):
 def index(request):
     if request.method == 'POST':
         form = slide_upload(request.POST, request.FILES)
-
+        converted_files = {}
 
         if form.is_valid():
             form.save()
             for filename, file in request.FILES.items():
                 name = request.FILES[filename].name
                 PPTtoPDF(PPT_ROOT + name, PPT_ROOT + name)
-                time.sleep(3)
-            return redirect('/slide/slide_upload')
+
+                time.sleep(3)   # time in seconds
+            return redirect('/slide/slide_view')
     else:
         form = slide_upload()
     return render(request, 'slideviewer/index.html', {

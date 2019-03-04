@@ -9,7 +9,7 @@ def index(request):
         form = doc_upload(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('/doc/doc_upload')
+            return redirect('/doc/doc_view')
     else:
         form = doc_upload()
     return render(request, 'docviewer/index.html', {
