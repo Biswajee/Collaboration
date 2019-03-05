@@ -10,3 +10,7 @@ class images(models.Model):
 
     def __str__(self):
         return str(self.id) + "\n" + self.name + "\n" + self.description + "\n" + str(self.image) + "\n" + self.created_by
+
+    def delete(self, *args, **kwargs):
+        self.image.delete()
+        super().delete(*args, **kwargs)

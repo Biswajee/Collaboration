@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import images
 from .serializers import imagesSerializer
-from .forms import image_upload_api
+from .forms import image_upload_api, image_update
 
 
 
@@ -52,3 +52,51 @@ class Api(APIView):
                 'url' : "http://127.0.0.1:8000/media/" + str(query_set.image)
             }
             return JsonResponse(context)
+
+
+    def delete_by_id(request):
+        query = request.GET.get('id')
+
+        if query == None:
+            context = {
+                'error': 'You need to pass in parameters'
+            }
+            return JsonResponse(context)
+        else:
+            query_set = images.objects.get(id=query)
+            query_set.delete()
+            context = {
+                'id' : query,
+                'status' : "deleted"
+            }
+            return JsonResponse(context)
+
+
+    def update_image(request):
+        if request.method == 'POST':
+            form = image_update(request.POST, request.FILES)
+            if form.is_valid():
+                query = request.POST.get('id_field')
+                print("Query String", query)
+                print("Files :", request.FILES)
+                if query == None:
+                    context = {
+                    'error': 'You need to pass in parameters'
+                    }
+                    return JsonResponse(context)
+                else:
+                    for filename, file in request.FILES.items():
+                        name = request.FILES[filename].name
+                        query_set = images.objects.filter(id=query).update(image='ImageAPI/' + name)
+                    context = {
+                    'id' : query,
+                    'new_url' : "http://127.0.0.1:8000/media/ImageAPI/" + str(name)
+                    }
+                    form.save()
+                    return JsonResponse(context)
+
+        else:
+            form = image_update()
+        return render(request, 'mediaAPI/update.html', {
+            'form' : form
+        })

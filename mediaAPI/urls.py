@@ -8,6 +8,8 @@ urlpatterns = [
     url(r'^help/', views.endpoint_list, name = 'endpoint_help'),
     url(r'^all_images/', views.Api.get_all, name = 'get_all_images'),
     url(r'^images/', views.Api.get_by_id, name = 'get_image_by_id'),
+    url(r'^delete_image/', views.Api.delete_by_id, name = 'delete_image_by_id'),
+    url(r'^update_image/', views.Api.update_image, name = 'update_image_by_id'),
 ]
 
 if settings.DEBUG:

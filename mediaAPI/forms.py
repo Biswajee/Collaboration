@@ -11,3 +11,10 @@ class image_upload_api(forms.ModelForm):
                   'image',
                   'created_by'
                   ]
+
+class image_update(forms.ModelForm):
+    class Meta:
+        model = images
+        fields = ['id',
+                  'image',
+                  ]
