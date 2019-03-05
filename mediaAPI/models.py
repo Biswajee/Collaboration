@@ -5,7 +5,7 @@ class images(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='media/ImageAPI', max_length=1000)
+    image = models.ImageField(upload_to='ImageAPI', max_length=1000)
     created_by = models.CharField(max_length=50)
 
     def __str__(self):

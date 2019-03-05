@@ -47,4 +47,8 @@ class Api(APIView):
             return JsonResponse(context)
         else:
             query_set = images.objects.get(id=query)
-            return JsonResponse(query_set, safe=False)
+            context = {
+                'id' : query,
+                'url' : "http://127.0.0.1:8000/media/" + str(query_set.image)
+            }
+            return JsonResponse(context)
