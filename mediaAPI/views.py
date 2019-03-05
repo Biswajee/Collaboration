@@ -17,5 +17,4 @@ def index(request):
     })
 
 def endpoint_list(request):
-    docx = documents.objects.last()
-    return render(request, 'mediaAPI/endpoint_help.html', json.loads(str(docx)))
+    return render(request, 'mediaAPI/endpoint_help.html')
