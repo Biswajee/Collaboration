@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', views.index, name = 'image_api'),
     url(r'^help/', views.endpoint_list, name = 'endpoint_help'),
+    url(r'^all_images/', views.get_all, name = 'get_all_images'),
 ]
 
 if settings.DEBUG:
