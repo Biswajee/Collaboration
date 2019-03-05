@@ -1,13 +1,11 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse
 from django.core.files.storage import FileSystemStorage
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import images
 from .serializers import imagesSerializer
 from .forms import image_upload_api
-
-
-
 
 
 
@@ -26,7 +24,14 @@ def index(request):
 def endpoint_list(request):
     return render(request, 'mediaAPI/endpoint_help.html')
 
-def get_all(request):
-    query_set = images.objects.all()
-    serializer = imagesSerializer(query_set, many=True)
-    return Response(serializer.data)
+
+# Core API features
+class Api(APIView):
+    def get_all(request):
+        query_set = list(images.objects.all().values())
+        print(query_set)
+        if len(query_set) == 0:
+            context = {'error' : 'no entries present in database'}
+            return JsonResponse(context)
+        else:
+            return JsonResponse(query_set, safe=False)
