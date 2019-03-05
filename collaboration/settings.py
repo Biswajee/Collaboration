@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'docviewer',
     'slideviewer',
     'mediaAPI',
+    'rest_framework',
     'django_mysql',
     'crispy_forms'
 ]

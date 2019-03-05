@@ -1,15 +1,13 @@
 from django import forms
 
-from .models import documents
+from .models import images
 
-class doc_upload(forms.ModelForm):
+class image_upload_api(forms.ModelForm):
     class Meta:
-        model = documents
-        fields = ['title',
+        model = images
+        fields = ['id',
+                  'name',
                   'description',
-                  'doc_url_1',
-                  'doc_url_2',
-                  'doc_url_3',
-                  'doc_url_4',
-                  'doc_url_5',
-                  'doc_url_6']
+                  'image',
+                  'created_by'
+                  ]

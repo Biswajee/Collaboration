@@ -3,6 +3,7 @@ comtypes==1.1.7
 Django==1.11.10
 django-crispy-forms==1.7.2
 django-mysql==2.4.1
+djangorestframework==3.9.2
 mysqlclient==1.4.2.post1
 Pillow==5.4.1
 pytz==2018.9

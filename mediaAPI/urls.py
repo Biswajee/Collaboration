@@ -4,8 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^doc_upload/', views.index, name = 'doc_upload'),
-    url(r'^doc_view/', views.doc_display, name = 'view_doc'),
+    url(r'^$', views.index, name = 'image_api'),
+    url(r'^help/', views.endpoint_list, name = 'endpoint_help'),
 ]
 
 if settings.DEBUG:
