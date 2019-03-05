@@ -4,9 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', views.index, name = 'image_api'),
+    url(r'^$', views.upload_image, name = 'image_api'),
     url(r'^help/', views.endpoint_list, name = 'endpoint_help'),
     url(r'^all_images/', views.Api.get_all, name = 'get_all_images'),
+    url(r'^images/', views.Api.get_by_id, name = 'get_image_by_id'),
 ]
 
 if settings.DEBUG:

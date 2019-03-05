@@ -9,7 +9,7 @@ from .forms import image_upload_api
 
 
 
-def index(request):
+def upload_image(request):
     if request.method == 'POST':
         form = image_upload_api(request.POST, request.FILES)
         if form.is_valid():
@@ -34,4 +34,17 @@ class Api(APIView):
             context = {'error' : 'no entries present in database'}
             return JsonResponse(context)
         else:
+            return JsonResponse(query_set, safe=False)
+
+
+    def get_by_id(request):
+        query = request.GET.get('id')
+
+        if query == None:
+            context = {
+                'error': 'You need to pass in parameters'
+            }
+            return JsonResponse(context)
+        else:
+            query_set = images.objects.get(id=query)
             return JsonResponse(query_set, safe=False)
