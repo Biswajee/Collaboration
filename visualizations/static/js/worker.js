@@ -1,5 +1,4 @@
 function importData() {
-  d3.json("data.json", function (data) {
-    console.log(data);
-  });
+  data = d3.json("/static/json/data.json");
+  console.log(data);
 }
