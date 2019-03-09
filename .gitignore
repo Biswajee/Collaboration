@@ -9,3 +9,6 @@ dashboard/migrations/
 
 # skip high quality animation uploads
 *.mp4
+
+# jupyter notebook checkpoints
+.ipynb_checkpoints/*
