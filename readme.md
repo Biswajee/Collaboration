@@ -123,7 +123,7 @@ The detail description for each of the modules are as follows:
 
 + **dashboard** - This module contains an _Image Gallery_ in django where users can upload as many images (upto 6 images) and the result will be displayed into another page on clicking the _create_ button.
 
- URL description for the module:
+  URL description for the module:
 
   > `http://127.0.0.1:8000/` - Base URL that contains button links to various modules of the application.
 
@@ -180,7 +180,7 @@ upload presentation files to the server.
     "url": "http://127.0.0.1:8000/media/media/ImageAPI/compass.jpg"
   }
   ```
-  
+
 
 ### Release v1.0.0 demonstration:
 
