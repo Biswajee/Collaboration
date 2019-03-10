@@ -129,7 +129,19 @@ The detail description for each of the modules are as follows:
 
   > `http://127.0.0.1:8000/image_upload/` - URL to upload image files to the server.
 
-  > `http://127.0.0.1:8000/image_list/`
+  > `http://127.0.0.1:8000/image_list/` - URL is directed to when the form in `/image_upload/` is submitted. This URL displays the images uploaded by user.
+
++ **docviewer** - This module contains a document upload section where document files can be uploaded and viewed in another page after the upload form is submitted. The max. number of allowed files is 6.
+
+  URL description for the module:
+
+  > `http://127.0.0.1:8000/doc/doc_upload/` - URL to upload document files to server.
+
+  > `http://127.0.0.1:8000/doc/doc_view/` - On submitting the form on `/doc/doc_upload/` page, the uploaded files can be viewed in this URL.
+
++ **slideviewer** - This module contains a presentation upload section where presentation files can be uploaded and viewed in another link. The max. number of uploads being 6.
+  >
+
 
 ### Release v1.0.0 demonstration:
 
