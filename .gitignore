@@ -11,4 +11,4 @@ dashboard/migrations/
 *.mp4
 
 # jupyter notebook checkpoints
-.ipynb_checkpoints/*
+preprocessing/.ipynb_checkpoints/*

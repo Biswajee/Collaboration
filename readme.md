@@ -45,62 +45,91 @@ Visit the site on `http://127.0.0.1:8000/image_upload/` (or any other port you c
 
 
 **Uploading document and viewing using document viewer** <br>
-Visit the website on `http://127.0.0.1:8000/doc/doc_upload/`. Click on `Create` button to submit the form. The uploaded documents are displayed in a new page. 
+Visit the website on `http://127.0.0.1:8000/doc/doc_upload/`. Click on `Create` button to submit the form. The uploaded documents are displayed in a new page.
 
 ### Directory structure
 
 The `dashboard` directory contains utility to upload images and display them.
 Static files for website are stored inside `static` directory. The uploaded images are stored in the `media` directory present inside `dashboard` directory.
 
-The Overall directory structure can be viewed as :
+The directory level view of the project :
 ```
 C:.
-│   .gitignore
-│   manage.py
-│   readme.md
-│   requirements.txt
-│
 ├───collaboration
-│   │   settings.py
-│   │   urls.py
-│   │   wsgi.py
-│   │   __init__.py
-│   │
 │   └───__pycache__
-│           
-│           
 ├───dashboard
-│   │   admin.py
-│   │   apps.py
-│   │   forms.py
-│   │   models.py
-│   │   tests.py
-│   │   urls.py
-│   │   views.py
-│   │   __init__.py
-│   │
 │   ├───migrations
-│   │   │   __init__.py
-│   │   │
 │   │   └───__pycache__
-│   │       
 │   ├───static
 │   │   ├───css
 │   │   └───js
-│   │           essentials.js
-│   │
 │   ├───templates
 │   │   └───dashboard
-│   │       │   display.html
-│   │       │   header.html
-│   │       │   index.html
-│   │       │   upload_error.html
-│   │       │
 │   │       └───includes
 │   └───__pycache__
-│           
-└───media
+├───docviewer
+│   ├───migrations
+│   │   └───__pycache__
+│   ├───static
+│   │   ├───css
+│   │   └───js
+│   ├───templates
+│   │   └───docviewer
+│   │       └───includes
+│   └───__pycache__
+├───media
+│   └───ImageAPI
+├───mediaAPI
+│   ├───migrations
+│   │   └───__pycache__
+│   ├───static
+│   │   ├───css
+│   │   └───js
+│   ├───templates
+│   │   └───mediaAPI
+│   │       └───includes
+│   └───__pycache__
+├───preprocessing
+│   └───.ipynb_checkpoints
+├───release_videos
+├───slideviewer
+│   ├───migrations
+│   │   └───__pycache__
+│   ├───static
+│   │   ├───css
+│   │   └───js
+│   ├───templates
+│   │   └───slideviewer
+│   │       └───includes
+│   └───__pycache__
+└───visualizations
+    ├───migrations
+    │   └───__pycache__
+    ├───static
+    │   ├───css
+    │   ├───js
+    │   └───json
+    ├───templates
+    │   └───visualizations
+    └───__pycache__
 ```
+### Module details
+
+The `collaboration` project is divided into 6 modules for performing 5 different tasks as directed in **Collaborative Communities** section. A high level overview is depicted below:
+
+![Modules of collaboration project](misc/modules.png)
+
+The detail description for each of the modules are as follows:
+
++ **dashboard** - This module contains an _Image Gallery_ in django where users can upload as many images (upto 6 images) and the result will be displayed into another page on clicking the _create_ button.
+
+ URL description for the module:
+
+  > `http://127.0.0.1:8000/` - Base URL that contains button links to various modules of the application.
+
+  > `http://127.0.0.1:8000/image_upload/` - URL to upload image files to the server.
+
+  > `http://127.0.0.1:8000/image_list/`
 
 ### Release v1.0.0 demonstration:
 
