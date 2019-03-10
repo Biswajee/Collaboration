@@ -140,8 +140,47 @@ The detail description for each of the modules are as follows:
   > `http://127.0.0.1:8000/doc/doc_view/` - On submitting the form on `/doc/doc_upload/` page, the uploaded files can be viewed in this URL.
 
 + **slideviewer** - This module contains a presentation upload section where presentation files can be uploaded and viewed in another link. The max. number of uploads being 6.
-  >
 
+  URL description for the module:
+
+  > `http://127.0.0.1:8000/slide/slide_upload/` - URL to
+upload presentation files to the server.
+  > `http://127.0.0.1:8000/slide/slide_view/` - URL is triggered when the form on `/slide/slide_upload/` is submitted. This URL displays each slides of the presentation in a file format. The contents of slides can only be viewed but not edited.
+
++ **mediaAPI** - This module contains a service that allows uploading image files to the server, updating specific image files based on their **id** , deleting image files rom the server and returning an API to access all images present in server database.
+
+###### Note : This module does not interact with **dashboard** module in any way. The image files are also saved in a location different from that of **dashboad** and databases for each modules are separate.
+
+  URL description for the module:
+
+  > `http://127.0.0.1:8000/api/` - Form endpoint to upload image files for API usage.
+
+  > `http://127.0.0.1:8000/api/all_images/` - This endpoint returns a JSON formatted response containing data of all images stored in the database and their file path reference.
+
+  Sample JSON response:
+
+  ```
+  [
+    {
+    "id": 3,
+    "name": "Compass",
+    "description": "This is a compass",
+    "image": "media/ImageAPI/compass.jpg",
+    "created_by": "Navigation dept"
+    }
+  ]
+  ```
+  > `http://127.0.0.1:8000/api/images/id=IMAGE_ID` - This endpoint returns the JSON formatted response for a specific image(already existing in database). Invalid IDs will result in error.
+
+  Sample JSON response for `IMAGE_ID = 3`:
+
+  ```
+  {
+    "id": "3",
+    "url": "http://127.0.0.1:8000/media/media/ImageAPI/compass.jpg"
+  }
+  ```
+  
 
 ### Release v1.0.0 demonstration:
 
