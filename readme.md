@@ -40,12 +40,7 @@ Now type in the following: `create database collab;`
 
 ### Navigation and running
 
-**Django image gallery** <br>
-Visit the site on `http://127.0.0.1:8000/image_upload/` (or any other port you configured it to rum) and fill up the form. Click on `create` button to submit the form and visit a new link `/image_list/` to find a list of your uploaded images.
-
-
-**Uploading document and viewing using document viewer** <br>
-Visit the website on `http://127.0.0.1:8000/doc/doc_upload/`. Click on `Create` button to submit the form. The uploaded documents are displayed in a new page.
+Visit the site on `http://127.0.0.1:8000/` to get a set of button links to explore various modules of the application. `:8000` is the default port for running django server. Please make necessary changes if you are running the server on a different port.
 
 ### Directory structure
 
@@ -209,7 +204,26 @@ upload presentation files to the server.
   > `http://127.0.0.1:8000/d3/` - D3.js uses the data stored in `visualizations/static/json/data.json` to create data points in the given URL. <br>
   The data.json has been developed using the **preprocessing** module which is not a part of the django project but can be run independently to produce the `data.json` file.
 
+### Additional files and related discussion:
 
+The django application requires some additional inclusions before running the application otherwise the application can run into errors.
+
++ **media** - Please create a media directory under the project folder. This directory will store all uploaded files from the user to this location and will use this location as reference to deliver files in JSON responses.
+
+  Tree View:
+  ```
+  ├───collaboration
+  ├───dashboard
+  ├───docviewer
+  ├───media     // place the directory at this level
+  ├───mediaAPI
+  ├───preprocessing
+  ├───release_videos
+  ├───slideviewer
+  └───visualizations
+  ```
+
++ **preprocessing** - This directory isn't necessary for running the django application. This directory is used to prepare the `data.json` file used by the **visualizations** module. Please refer to further documentation under preprocessing directory [here](preprocessing/readme.md)   
 
 
 ### Release v1.0.0 demonstration:
