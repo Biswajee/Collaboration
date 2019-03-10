@@ -145,6 +145,7 @@ The detail description for each of the modules are as follows:
 
   > `http://127.0.0.1:8000/slide/slide_upload/` - URL to
 upload presentation files to the server.
+
   > `http://127.0.0.1:8000/slide/slide_view/` - URL is triggered when the form on `/slide/slide_upload/` is submitted. This URL displays each slides of the presentation in a file format. The contents of slides can only be viewed but not edited.
 
 + **mediaAPI** - This module contains a service that allows uploading image files to the server, updating specific image files based on their **id** , deleting image files rom the server and returning an API to access all images present in server database.
@@ -180,6 +181,35 @@ upload presentation files to the server.
     "url": "http://127.0.0.1:8000/media/media/ImageAPI/compass.jpg"
   }
   ```
+
+  > `http://127.0.0.1:8000/api/delete_image/?id=IMAGE_ID` - Deletes image with the given `IMAGE_ID` as parameter both from the database and the file system and returns a JSON formatted response when the action is successfully performed.
+
+  Sample successful delete JSON response for `IMAGE_ID = 5`:
+  ```
+  {
+    "id": "5",
+    "status": "deleted"
+  }
+  ```
+
+  If no `id` parameter is passed to the URL `http://127.0.0.1:8000/api/delete_image/`, it results in a JSON formatted error response as:
+
+  ```
+  {
+    "error": "You need to pass in parameters"
+  }
+  ```
+
+  > `http://127.0.0.1:8000/api/update_image` - This endpoint results in a form page where the ID of an existing image in database can be entered and a new image can be uploaded and the image corresponding to the given ID will get updated with the newly updated image relative path in the database.
+
++ **visualizations** - This module holds a simple web application that uses D3.js to display data from json file.
+
+  URL description for the module:
+
+  > `http://127.0.0.1:8000/d3/` - D3.js uses the data stored in `visualizations/static/json/data.json` to create data points in the given URL. <br>
+  The data.json has been developed using the **preprocessing** module which is not a part of the django project but can be run independently to produce the `data.json` file.
+
+
 
 
 ### Release v1.0.0 demonstration:
