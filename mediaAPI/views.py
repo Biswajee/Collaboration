@@ -8,7 +8,7 @@ from .serializers import imagesSerializer
 from .forms import image_upload_api, image_update
 
 
-
+# returns a form page where image can be uploaded, on get request, returns an empty form
 def upload_image(request):
     if request.method == 'POST':
         form = image_upload_api(request.POST, request.FILES)
@@ -20,13 +20,14 @@ def upload_image(request):
     return render(request, 'mediaAPI/index.html', {
         'form' : form
     })
-
+# returns a help on the list of available endpoints
 def endpoint_list(request):
-    return render(request, 'mediaAPI/endpoint_help.html')
+    return redirect('https://github.com/Biswajee/Collaboration#module-details')
 
 
 # Core API features
 class Api(APIView):
+    # get all images from the database in JSON format
     def get_all(request):
         query_set = list(images.objects.all().values())
         print(query_set)
@@ -36,7 +37,7 @@ class Api(APIView):
         else:
             return JsonResponse(query_set, safe=False)
 
-
+    # get a particular image data in JSON format using ID
     def get_by_id(request):
         query = request.GET.get('id')
 
@@ -53,7 +54,7 @@ class Api(APIView):
             }
             return JsonResponse(context)
 
-
+    # delete a particluar image from database and filesystem based on its ID
     def delete_by_id(request):
         query = request.GET.get('id')
 
@@ -71,7 +72,7 @@ class Api(APIView):
             }
             return JsonResponse(context)
 
-
+    # update an image with another image using a form page, requires the ID of image to be updated
     def update_image(request):
         if request.method == 'POST':
             form = image_update(request.POST, request.FILES)
