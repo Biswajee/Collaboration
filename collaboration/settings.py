@@ -81,6 +81,14 @@ WSGI_APPLICATION = 'collaboration.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+'''
+MySQL database configuration follows below,
+
+Modify the 'USER' data to the username accessing the MySQL database
+'NAME' refers to the database used to store various tables used in the application
+Please modify the 'PORT' parameter accordingly to the MySQL running port (default : 3306)
+'''
+
 DATABASES = {
         'default': {
                 'ENGINE' : 'django.db.backends.mysql',
@@ -132,6 +140,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# Path to access static files and media files follows
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

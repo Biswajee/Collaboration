@@ -16,6 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+'''
+The project contains 5 web applications each for a given task.
+However, the base URL http://127.0.0.0:8000 is included in dashboard.urls
+The base URL contains links to all available applications in the project.
+'''
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('dashboard.urls')),
