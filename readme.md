@@ -1,7 +1,7 @@
 ## Collaboration
 
 ### Introduction
-The release `v1.1.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload.
+The release `v1.4.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload. Youtube demonstration : [here](https://www.youtube.com/watch?v=EoZSGQHIVOU)
 
 ### Prerequisites
 + Django 1.11
@@ -166,7 +166,7 @@ upload presentation files to the server.
     }
   ]
   ```
-  > `http://127.0.0.1:8000/api/images/id=IMAGE_ID` - This endpoint returns the JSON formatted response for a specific image(already existing in database). Invalid IDs will result in error.
+  > `http://127.0.0.1:8000/api/images/?id=IMAGE_ID` - This endpoint returns the JSON formatted response for a specific image(already existing in database). Invalid IDs will result in error.
 
   Sample JSON response for `IMAGE_ID = 3`:
 
