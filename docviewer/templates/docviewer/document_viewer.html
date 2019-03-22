@@ -19,9 +19,7 @@
           {% for file in doc_files %}
           <div class="row pt-5">
             <div class="col-sm">
-              {% if doc_1.type == "pdf" %}
-              <embed src="http://127.0.0.1:8000/media/{{ doc_1.url }}" type="application/pdf" width="100%" height="300px" />
-              {% endif %}
+              <embed src="http://127.0.0.1:8000/media/{{ file }}" type="application/pdf" width="100%" height="500px" />
             </div>
           </div>
           {% endfor %}

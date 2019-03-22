@@ -14,6 +14,7 @@ class documents(models.Model):
 
     def __str__(self):
         context = {
+            'id' : self.id,
             'title' : self.title,
             'description' : self.description,
         }
@@ -25,8 +26,5 @@ class document_files(models.Model):
 
 
      def __str__(self):
-         context = {
-            'status' : 'Saved under ID ' + str(sequence)
-         }
-
-         return json.dumps(context)
+         context = self.doc_urls
+         return str(self.doc_urls)
