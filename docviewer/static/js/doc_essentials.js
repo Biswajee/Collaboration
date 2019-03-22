@@ -1,20 +1,20 @@
 
 /* Removes all file input div elements to be created using + button */
 
-(function() {
-  for(start=1;start<=6; start++) {
-    document.getElementById('div_id_doc_url_' + start).remove();
-  }
-})();
+// (function() {
+//   for(start=1;start<=6; start++) {
+//     document.getElementById('div_id_doc_url_' + start).remove();
+//   }
+// })();
 
 
 (function() {
   var maindiv = document.createElement('div');
   maindiv.className = 'form-group';
-  maindiv.id = 'div_id_doc_url_' + 1;
+  maindiv.id = 'file';
 
   var lb = document.createElement('label');
-  lb.for = 'div_id_doc_url_' + 1;
+  lb.for = 'file';
   lb.className = 'col-form-label';
   lb.innerHTML = 'Document ' + 1;
 
@@ -22,9 +22,9 @@
 
   var inp = document.createElement('input');
   inp.type = 'file';
-  inp.name = 'doc_url_'+ 1;
+  inp.name = 'file';
   inp.className = 'clearablefileinput';
-  inp.id = 'id_doc_url_' + 1;
+  inp.id = 'file';
 
 
   context.appendChild(inp);
@@ -41,13 +41,13 @@ var i = 2;
 
 
 function addelement() {
-  if (i <= 6) {
+  if (true) {
     var maindiv = document.createElement('div');
     maindiv.className = 'form-group';
-    maindiv.id = 'div_id_doc_url_' + i;
+    maindiv.id = 'file';
 
     var lb = document.createElement('label');
-    lb.for = 'div_id_doc_url_' + i;
+    lb.for = 'file';
     lb.className = 'col-form-label';
     lb.innerHTML = 'Document ' + i;
 
@@ -55,9 +55,9 @@ function addelement() {
 
     var inp = document.createElement('input');
     inp.type = 'file';
-    inp.name = 'doc_url_'+i;
+    inp.name = 'file';
     inp.className = 'clearablefileinput';
-    inp.id = 'id_doc_url_' + i;
+    inp.id = 'file';
 
 
     context.appendChild(inp);

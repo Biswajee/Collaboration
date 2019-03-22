@@ -16,49 +16,15 @@
 
         <div class="card-body">
 
-          <div class="row pt-3">
+          {% for file in doc_files %}
+          <div class="row pt-5">
             <div class="col-sm">
               {% if doc_1.type == "pdf" %}
               <embed src="http://127.0.0.1:8000/media/{{ doc_1.url }}" type="application/pdf" width="100%" height="300px" />
               {% endif %}
             </div>
           </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if doc_2.type == "pdf" %}
-              <embed src="http://127.0.0.1:8000/media/{{ doc_2.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if doc_3.type == "pdf" %}
-              <embed src="http://127.0.0.1:8000/media/{{ doc_3.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if doc_4.type == "pdf" %}
-              <embed src="http://127.0.0.1:8000/media/{{ doc_4.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if doc_5.type == "pdf" %}
-              <embed src="http://127.0.0.1:8000/media/{{ doc_5.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if doc_6.type == "pdf" %}
-              <embed src="http://127.0.0.1:8000/media/{{ doc_6.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-
+          {% endfor %}
           <div class="row">
             <div class="col-lg">
               <a href="/doc/doc_upload/" class="btn btn-outline-warning" style="float: right;">Go Back</a>
