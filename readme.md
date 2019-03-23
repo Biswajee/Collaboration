@@ -1,7 +1,7 @@
 ## Collaboration
 
 ### Introduction
-The release `v1.4.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload. Youtube demonstration : [here](https://www.youtube.com/watch?v=EoZSGQHIVOU)
+The release `v1.5.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload. Youtube demonstration : [here](https://www.youtube.com/watch?v=EoZSGQHIVOU)
 
 ### Prerequisites
 + Django 1.11
@@ -13,6 +13,7 @@ The release `v1.4.0` of the repository contains functionalities where users can 
 `git clone https://github.com/Biswajee/Collaboration.git`
 
 + `cd` into the directory `Collaboration` and create a `python` environment
+
       Using conda:
       conda create -n collabenv
 
@@ -32,10 +33,12 @@ The release `v1.4.0` of the repository contains functionalities where users can 
 Now type in the following: `create database collab;`
 
 + Now, run the `django database migrations` using:
+
       python manage.py makemigrations
       python manage.py migrate
 
 + Now, start the django server using:
+
       python manage.py runserver
 
 ### Navigation and running
@@ -116,7 +119,7 @@ The `collaboration` project is divided into 6 modules for performing 5 different
 
 The detail description for each of the modules are as follows:
 
-+ **dashboard** - This module contains an _Image Gallery_ in django where users can upload as many images (upto 6 images) and the result will be displayed into another page on clicking the _create_ button.
++ **dashboard** - This module contains an _Image Gallery_ in django where users can upload as many images and the result will be displayed into another page on clicking the _create_ button.
 
   URL description for the module:
 
@@ -126,7 +129,7 @@ The detail description for each of the modules are as follows:
 
   > `http://127.0.0.1:8000/image_list/` - URL is directed to when the form in `/image_upload/` is submitted. This URL displays the images uploaded by user.
 
-+ **docviewer** - This module contains a document upload section where document files can be uploaded and viewed in another page after the upload form is submitted. The max. number of allowed files is 6.
++ **docviewer** - This module contains a document upload section where document files can be uploaded and viewed in another page after the upload form is submitted.
 
   URL description for the module:
 
@@ -134,7 +137,7 @@ The detail description for each of the modules are as follows:
 
   > `http://127.0.0.1:8000/doc/doc_view/` - On submitting the form on `/doc/doc_upload/` page, the uploaded files can be viewed in this URL.
 
-+ **slideviewer** - This module contains a presentation upload section where presentation files can be uploaded and viewed in another link. The max. number of uploads being 6.
++ **slideviewer** - This module contains a presentation upload section where presentation files can be uploaded and viewed in another link.
 
   URL description for the module:
 
@@ -223,9 +226,4 @@ The django application requires some additional inclusions before running the ap
   └───visualizations
   ```
 
-+ **preprocessing** - This directory isn't necessary for running the django application. This directory is used to prepare the `data.json` file used by the **visualizations** module. Please refer to further documentation under preprocessing directory [here](preprocessing/readme.md)   
-
-
-### Release v1.0.0 demonstration:
-
-![Release v1.0.0 - Django Image Gallery](https://user-images.githubusercontent.com/26689027/53584818-81d1cc00-3baa-11e9-86a4-3a3dffa8b148.gif)
++ **preprocessing** - This directory isn't necessary for running the django application. This directory is used to prepare the `data.json` file used by the **visualizations** module. Please refer to further documentation under preprocessing directory [here](preprocessing/)   
