@@ -6,6 +6,10 @@ media/
 
 # database migrations
 dashboard/migrations/
+docviewer/migrations/
+mediaAPI/migrations/
+slideviewer/migrations/
+
 
 # skip high quality animation uploads
 *.mp4
