@@ -14,7 +14,7 @@ def index(request):
         form = doc_upload(request.POST, request.FILES)
         if form.is_valid():
             saveRes = form.save()
-            print('Form ID ', saveRes.pk, request.FILES)
+
             for file in request.FILES.getlist('file'):
                 doc_files = document_files(sequence = saveRes, doc_urls = file)
                 doc_files.save()
@@ -36,4 +36,7 @@ def doc_display(request):
     context = []
     for file in doc_files:
         context.append(file)
-    return render(request, 'docviewer/document_viewer.html', {'doc_files' : context })
+    return render(request, 'docviewer/document_viewer.html', {'doc_files' : context,
+                                                              'title' : docx.title,
+                                                              'description' : docx.description
+                                                              })

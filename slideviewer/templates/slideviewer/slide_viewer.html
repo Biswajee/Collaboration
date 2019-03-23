@@ -16,48 +16,13 @@
 
         <div class="card-body">
 
-          <div class="row pt-3">
+          {% for file in slide_files %}
+          <div class="row pt-5">
             <div class="col-sm">
-              {% if ppt_1.type %}
-              <embed src="http://127.0.0.1:8000/media/{{ ppt_1.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
+              <embed src="http://127.0.0.1:8000/media/{{ file }}.pdf" type="application/pdf" width="100%" height="500px" />
             </div>
           </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if ppt_2.type %}
-              <embed src="http://127.0.0.1:8000/media/{{ ppt_2.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if ppt_3.type %}
-              <embed src="http://127.0.0.1:8000/media/{{ ppt_3.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if ppt_4.type %}
-              <embed src="http://127.0.0.1:8000/media/{{ ppt_4.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if ppt_5.type %}
-              <embed src="http://127.0.0.1:8000/media/{{ ppt_5.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
-          <div class="row pt-5">
-            <div class="col-lg">
-              {% if ppt_6.type %}
-              <embed src="http://127.0.0.1:8000/media/{{ ppt_6.url }}" type="application/pdf" width="100%" height="500px" />
-              {% endif %}
-            </div>
-          </div>
+          {% endfor %}
 
           <div class="row">
             <div class="col-lg">

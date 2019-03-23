@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.files.storage import FileSystemStorage
-from .models import slides
+from .models import slides, slide_files
 from .forms import slide_upload
 import json
 # import comtypes.client
@@ -35,12 +35,15 @@ def index(request):
         converted_files = {}
 
         if form.is_valid():
-            form.save()
-            for filename, file in request.FILES.items():
-                name = request.FILES[filename].name
-                PPTtoPDF(PPT_ROOT + name, PPT_ROOT + name)
+            saveRes = form.save()
+            for file in request.FILES.getlist('slide'):
+                saveSlides = slide_files(sequence = saveRes, slide_urls = file)
+                saveSlides.save()
 
-                time.sleep(10)   # time in seconds
+                # convert each presentation files to pdf format
+                PPTtoPDF(PPT_ROOT + str(file), PPT_ROOT + str(file))
+
+            time.sleep(10)   # time in seconds
             return redirect('/slide/slide_view')
     else:
         form = slide_upload()
@@ -50,5 +53,13 @@ def index(request):
 
 
 def slide_display(request):
-    ppt = slides.objects.last()
-    return render(request, 'slideviewer/slide_viewer.html', json.loads(str(ppt)))
+    presentation = slides.objects.last()
+    presentation_files = slide_files.objects.filter(sequence = presentation.id)
+
+    context = []
+    for file in presentation_files:
+        context.append(file)
+    return render(request, 'slideviewer/slide_viewer.html', {'slide_files' : context,
+                                                             'title' : presentation.title,
+                                                             'description' : presentation.description
+                                                             })

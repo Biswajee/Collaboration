@@ -1,19 +1,11 @@
 
-/* Removes all file input div elements to be created using + button */
-
-(function() {
-  for(start=1;start<=6; start++) {
-    document.getElementById('div_id_ppt_url_' + start).remove();
-  }
-})();
-
 (function() {
   var maindiv = document.createElement('div');
   maindiv.className = 'form-group';
-  maindiv.id = 'div_id_ppt_url_' + 1;
+  maindiv.id = 'slide_div';
 
   var lb = document.createElement('label');
-  lb.for = 'div_id_ppt_url_' + 1;
+  lb.for = 'slide';
   lb.className = 'col-form-label';
   lb.innerHTML = 'Presentation ' + 1;
 
@@ -21,7 +13,7 @@
 
   var inp = document.createElement('input');
   inp.type = 'file';
-  inp.name = 'ppt_url_'+1;
+  inp.name = 'slide';
   inp.className = 'clearablefileinput';
   inp.id = 'id_ppt_url_' + 1;
 
@@ -40,13 +32,13 @@ var i = 2;
 
 
 function addelement() {
-  if (i <= 6) {
+
     var maindiv = document.createElement('div');
     maindiv.className = 'form-group';
-    maindiv.id = 'div_id_ppt_url_' + i;
+    maindiv.id = 'slide_div';
 
     var lb = document.createElement('label');
-    lb.for = 'div_id_ppt_url_' + i;
+    lb.for = 'slide';
     lb.className = 'col-form-label';
     lb.innerHTML = 'Presentation ' + i;
 
@@ -54,9 +46,9 @@ function addelement() {
 
     var inp = document.createElement('input');
     inp.type = 'file';
-    inp.name = 'ppt_url_'+i;
+    inp.name = 'slide';
     inp.className = 'clearablefileinput';
-    inp.id = 'id_ppt_url_' + i;
+    inp.id = 'slide';
 
 
     context.appendChild(inp);
@@ -67,5 +59,5 @@ function addelement() {
     element.appendChild(maindiv);
 
     i = i + 1;
-  }
+
 };

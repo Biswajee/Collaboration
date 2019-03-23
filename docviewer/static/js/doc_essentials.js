@@ -1,13 +1,4 @@
 
-/* Removes all file input div elements to be created using + button */
-
-// (function() {
-//   for(start=1;start<=6; start++) {
-//     document.getElementById('div_id_doc_url_' + start).remove();
-//   }
-// })();
-
-
 (function() {
   var maindiv = document.createElement('div');
   maindiv.className = 'form-group';
@@ -41,7 +32,7 @@ var i = 2;
 
 
 function addelement() {
-  if (true) {
+
     var maindiv = document.createElement('div');
     maindiv.className = 'form-group';
     maindiv.id = 'file';
@@ -68,5 +59,5 @@ function addelement() {
     element.appendChild(maindiv);
 
     i = i + 1;
-  }
+
 };

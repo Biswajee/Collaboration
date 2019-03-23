@@ -26,5 +26,4 @@ class document_files(models.Model):
 
 
      def __str__(self):
-         context = self.doc_urls
          return str(self.doc_urls)
