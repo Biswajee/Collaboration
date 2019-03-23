@@ -9,51 +9,26 @@
           Image display section
         </div>
         <div class="card-body">
-          <div class="well"> Title : {{ images.title }} </div>
-          <div class="well"> Description : {{ images.description }} </div>
+          <div class="well"> Title : {{ title }} </div>
+          <div class="well"> Description : {{ description }} </div>
         </div>
 
         <div class="card-body">
 
-          <div class="row">
-            <div class="col-sm">
-              {% if images.image_url_1 %}
-              <td> <img src="/media/{{ images.image_url_1 }}" alt="{{ images.title }}" style="width: 300px;"></td>
-              {% endif %}
-            </div>
-            <div class="col-sm">
-              {% if images.image_url_2 %}
-              <td> <img src="/media/{{ images.image_url_2 }}" alt="{{ images.title }}" style="width: 300px;"></td>
-              {% endif %}
-            </div>
-            <div class="col-sm">
-              {% if images.image_url_3 %}
-              <td> <img src="/media/{{ images.image_url_3 }}" alt="{{ images.title }}" style="width: 300px;"></td>
-              {% endif %}
-            </div>
+
+          <div class="row pt-3">
+            {% for file in image_files %}
+              <div class="col-sm pt-5">
+                <img src="/media/{{ file }}" alt="{{ file }}" title="{{ file }}" style="width: 300px;" />
+              </div>
+            {% endfor %}
+        </div>
+
+        <div class="row pt-5">
+          <div class="col-lg">
+            <a href="/image_upload/" class="btn btn-outline-warning" style="float: right;">Go Back</a>
           </div>
-          <div class="row">
-            <div class="col-sm">
-              {% if images.image_url_4 %}
-              <td> <img src="/media/{{ images.image_url_4 }}" alt="{{ images.title }}" style="width: 300px;"></td>
-              {% endif %}
-            </div>
-            <div class="col-sm">
-              {% if images.image_url_5 %}
-              <td> <img src="/media/{{ images.image_url_5 }}" alt="{{ images.title }}" style="width: 300px;"></td>
-              {% endif %}
-            </div>
-            <div class="col-md-sm">
-              {% if images.image_url_6 %}
-              <td> <img src="/media/{{ images.image_url_6 }}" alt="{{ images.title }}" style="width: 300px;"></td>
-              {% endif %}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg">
-              <a href="/image_upload/" class="btn btn-outline-warning" style="float: right;">Go Back</a>
-            </div>
-          </div>
+        </div>
 
         </div>
       </div>

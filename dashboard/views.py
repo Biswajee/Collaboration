@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.files.storage import FileSystemStorage
-from .models import imgdb
+from .models import imgdb, img_files
 from .forms import image_upload
 
 
@@ -12,9 +12,13 @@ def index(request):
 # If a get request to the URL is made, a blank form is rendered
 def im_upload(request):
     if request.method == 'POST':
-        form = image_upload(request.POST, request.FILES)
+        form = image_upload(request.POST)
         if form.is_valid():
-            form.save()
+            saveRes = form.save()
+
+            for file in request.FILES.getlist('file'):
+                image_files = img_files(sequence = saveRes, img_urls = file)
+                image_files.save()
             return redirect('image_list')
     else:
         form = image_upload()
@@ -25,7 +29,12 @@ def im_upload(request):
 # pulls out the last entry in the imgdb database and displays the images in the "image_list/" URL
 def gallery_display(request):
     images = imgdb.objects.last()
-    # print(type(images))
-    return render(request, 'dashboard/display.html', {
-            'images' : images
-    })
+    image_files = img_files.objects.filter(sequence = images.id)
+    context = []
+    for file in image_files:
+        context.append(file)
+
+    return render(request, 'dashboard/display.html', {'image_files' : context,
+                                                      'title' : images.title,
+                                                      'description' : images.description
+                                                      })
