@@ -1,7 +1,7 @@
 ## Collaboration
 
 ### Introduction
-The release `v1.5.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload. Youtube demonstration : [here](https://www.youtube.com/watch?v=EoZSGQHIVOU)
+The release `v1.5.0` of the repository contains functionalities where users can upload multiple image files to the server and view them after upload. Youtube demonstration : [here](https://youtu.be/ibfP1MHrXeo)
 
 ### Prerequisites
 + Django 1.11
