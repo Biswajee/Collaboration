@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect
-from django.core.files.storage import FileSystemStorage
-from .models import documents, document_files
-from .forms import doc_upload
 import json
+
+from django.core.files.storage import FileSystemStorage
+from django.shortcuts import redirect, render
+
+from .forms import doc_upload
+from .models import document_files, documents
 
 # returns the form page to upload documents, for get request, returns blank form page
 # index() accepts form data and saves it into two tables, namely documents and document_files.

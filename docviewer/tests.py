@@ -1,3 +1,7 @@
 from django.test import TestCase
 
-# Create your tests here.
+from docviewer.models import document_files, documents
+
+
+def test_models_documents():
+

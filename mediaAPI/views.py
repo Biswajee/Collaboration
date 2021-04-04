@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
 from django.core.files.storage import FileSystemStorage
-from rest_framework.views import APIView
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import redirect, render
 from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from .forms import image_update, image_upload_api
 from .models import images
 from .serializers import imagesSerializer
-from .forms import image_upload_api, image_update
 
 
 # returns a form page where image can be uploaded, on get request, returns an empty form

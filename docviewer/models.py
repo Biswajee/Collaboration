@@ -1,5 +1,7 @@
-from django.db import models
 import json
+
+from django.db import models
+
 
 class documents(models.Model):
     title = models.CharField(max_length=200)

@@ -1,13 +1,15 @@
-from django.shortcuts import render, redirect
-from django.core.files.storage import FileSystemStorage
-from .models import slides, slide_files
-from .forms import slide_upload
 import json
-# import comtypes.client
-import win32com.client
-from pythoncom import CoInitialize
 import os
 import time
+
+# import comtypes.client
+import win32com.client
+from django.core.files.storage import FileSystemStorage
+from django.shortcuts import redirect, render
+from pythoncom import CoInitialize
+
+from .forms import slide_upload
+from .models import slide_files, slides
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PPT_ROOT = os.path.join(BASE_DIR, 'media') + "\\"

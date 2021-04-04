@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
 from django.core.files.storage import FileSystemStorage
-from .models import imgdb, img_files
+from django.shortcuts import redirect, render
+
 from .forms import image_upload
+from .models import img_files, imgdb
 
 
 # returns the homepage of the application in the base url to access various features of the application
