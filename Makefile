@@ -46,7 +46,7 @@ update: ## target: update - install (and update) pip requirements, alias i
 l: lint
 lint:
 	pip3 install flake8
-	flake8 .
+	flake8 . --max-line-length=127
 
 collect: ## target: collect - calls the "collectstatic" django command
 	django-admin.py collectstatic --settings=$(SETTINGS) --noinput
