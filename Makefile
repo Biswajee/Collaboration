@@ -7,42 +7,41 @@ MAKEFLAGS := --silent --no-print-directory
 .DEFAULT_GOAL := help
 
 help:
-   @echo "Please use 'make <target>' where <target> is one of"
-   @awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z\._-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@echo "Please use 'make <target>' where <target> is one of"
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z\._-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-install:
-    pipenv install
+r: run
+run: ## runs django local server, alias r
+	python3 manage.py runserver
 
-activate:
-    pipenv shell
+mn: migration
+migration: ## performs db migrations, alias mn
+	python3 manage.py makemigrations
 
-run:
-    python manage.py runserver
+m: migrate
+migrate: ## performs migrate on db, alias m
+	python3 manage.py migrate
 
-migration:
-    python manage.py makemigrations
+su: superuser
+superuser: ## creates django app superuser, alias su
+	python3 manage.py createsuperuser
 
-migrate:
-    python manage.py migrate
-
-superuser:
-    python manage.py createsuperuser
-
-heroku:
-    git push heroku master
+hk: heroku
+heroku: ## push to heroku, alias hk
+	git push heroku master
 
 # target: test - calls the "test" django command
-test:
-	django-admin.py test --settings=$(TEST_SETTINGS)
+t: test
+test: ## run django tests
+	python3 manage.py test
 
-# target: clean - remove all ".pyc" files
-clean:
+c: clean
+clean: ## target: clean - remove all ".pyc" files, alias c
 	django-admin.py clean_pyc --settings=$(SETTINGS)
 
-# target: update - install (and update) pip requirements
-update:
-	pip install -U -r requirements.pip
+i: update
+update: ## target: update - install (and update) pip requirements, alias i
+	pip3 install -U -r requirements.txt
 
-# target: collect - calls the "collectstatic" django command
-collect:
+collect: ## target: collect - calls the "collectstatic" django command
 	django-admin.py collectstatic --settings=$(SETTINGS) --noinput

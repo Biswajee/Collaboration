@@ -1,28 +1,55 @@
-# This workflow checks out code, performs a Codacy security scan
-# and integrates the results with the
-# GitHub Advanced Security code scanning feature.  For more information on
-# the Codacy security scan action usage and parameters, see
-# https://github.com/codacy/codacy-analysis-cli-action.
-# For more information on Codacy Analysis CLI in general, see
-# https://github.com/codacy/codacy-analysis-cli.
-
-name: Codacy Security Scan
+name: Collaboration pipeline
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - develop
+      - feature/*
+      - hotfix/*
+      - bugfix/*
+
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ master ]
-  schedule:
-    - cron: '18 23 * * 0'
+    branches:
+      - master
+      - develop
+      - feature/*
+      - hotfix/*
+      - bugfix/*
 
 jobs:
+  install-application:
+    name: Installs collaboration
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Run apt update
+        run: sudo apt update
+        shell: bash
+
+      - name: Install MySQL client
+        shell: bash
+        run: |
+          # install the client
+          sudo apt install mysql-server
+          # run security scan
+          sudo ./mysql_secure.sh
+
+      - name: Install requirements
+        shell: bash
+        run: make i
+
+      - name: Make migrations
+        shell: bash
+        run: make m && make mn
+
+      - name: Run tests
+        shell: bash
+        run: make t
+
   codacy-security-scan:
     name: Codacy Security Scan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      # Checkout the repository to the GitHub Actions runner
       - name: Checkout code
         uses: actions/checkout@v2
 
