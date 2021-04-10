@@ -33,7 +33,6 @@ jobs:
         # install the client
         run: |
           sudo apt install mysql-server
-          systemctl status mysql.service
           sudo systemctl start mysql
 
       - name: Set up Python ${{ matrix.python-version }}
