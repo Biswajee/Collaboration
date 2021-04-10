@@ -25,19 +25,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run apt update
-        run: | 
-          sudo apt update
-          sudo apt upgrade
-        shell: bash
-
       - name: Install MySQL client
         shell: bash
         run: |
           # install the client
           sudo apt install mysql-server
           # run security scan
-          ./mysql_secure.sh
+          sudo ./mysql_secure.sh
 
       - name: Install requirements
         shell: bash
