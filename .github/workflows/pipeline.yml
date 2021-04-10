@@ -25,15 +25,19 @@ jobs:
       matrix:
         os: [ubuntu-18.04, ubuntu-20.04]
         python-version: [3.6, 3.8, 3.9]
+    services:
+      # Uses the mysql db from docker
+      mysql:
+          image: mysql:5.7
+          env:
+              MYSQL_ALLOW_EMPTY_PASSWORD: yes
+              MYSQL_DATABASE: collab
+          ports:
+              - 3306
+          options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install MySQL client
-        shell: bash
-        # install the client
-        run: |
-          sudo apt install mysql-server
-          sudo systemctl start mysql
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
