@@ -1,3 +1,5 @@
+import pytest
+
 from django.test import TestCase
 from docviewer.models import document_files, documents
 from http import HTTPStatus
@@ -11,11 +13,11 @@ class TestDocviewerForms(TestCase):
       ("Blackpink", "Is the revolution"),
     ]
   )
-  def test_docviewer_documents(self, title: str, description: str):
+  def test_docviewer_documents(self) -> None:
     response = self.client.post(
       '/doc/doc_upload/', data={
-        'title': title,
-        'description': description,
+        'title': "some-title",
+        'description': "a long meaningful description",
       }
     )
 

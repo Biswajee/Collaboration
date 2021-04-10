@@ -55,9 +55,12 @@ jobs:
         shell: bash
         run: make m && make mn
 
-      - name: Run tests
+      - name: Run tests and generate report
         shell: bash
-        run: make t
+        run: |
+          make t
+          coverage run --source='.' make t
+          coverage report
 
   # codacy-security-scan:
   #   name: Codacy Security Scan
