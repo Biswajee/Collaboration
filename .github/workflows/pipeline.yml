@@ -31,7 +31,7 @@ jobs:
           # install the client
           sudo apt install mysql-server
           # run security scan
-          sudo ./mysql_secure.sh
+          chmod +x mysql_secure.sh && ./mysql_secure.sh
 
       - name: Install requirements
         shell: bash
