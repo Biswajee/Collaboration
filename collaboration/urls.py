@@ -16,18 +16,18 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-'''
+"""
 The project contains 5 web applications each for a given task.
 However, the base URL http://127.0.0.0:8000 is included in dashboard.urls
 The base URL contains links to all available applications in the project.
-'''
+"""
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'', include('dashboard.urls')),
-    url(r'doc/', include('docviewer.urls')),
-    url(r'slide/', include('slideviewer.urls')),
-    url(r'api/', include('mediaAPI.urls')),
-    url(r'd3/', include('visualizations.urls')),
+    url(r"^admin/", admin.site.urls),
+    url(r"", include("dashboard.urls")),
+    url(r"doc/", include("docviewer.urls")),
+    url(r"slide/", include("slideviewer.urls")),
+    url(r"api/", include("mediaAPI.urls")),
+    url(r"d3/", include("visualizations.urls")),
 ]

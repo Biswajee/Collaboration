@@ -4,9 +4,7 @@ from django.conf.urls.static import static
 
 from . import views
 
-urlpatterns = [
-    url(r'^$', views.index, name = 'd3_visual')
-]
+urlpatterns = [url(r"^$", views.index, name="d3_visual")]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

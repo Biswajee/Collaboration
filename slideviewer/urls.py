@@ -5,8 +5,8 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^slide_upload/', views.index, name = 'slide_upload'),
-    url(r'^slide_view/', views.slide_display, name = 'view_slides'),
+    url(r"^slide_upload/", views.index, name="slide_upload"),
+    url(r"^slide_view/", views.slide_display, name="view_slides"),
 ]
 
 if settings.DEBUG:

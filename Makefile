@@ -43,5 +43,13 @@ i: update
 update: ## target: update - install (and update) pip requirements, alias i
 	pip3 install -U -r requirements.txt
 
+l: lint
+lint:
+	pip install flake8 black isort
+	# stop the build if there are Python syntax errors or undefined names
+	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+	# exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+	flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
+
 collect: ## target: collect - calls the "collectstatic" django command
 	django-admin.py collectstatic --settings=$(SETTINGS) --noinput
