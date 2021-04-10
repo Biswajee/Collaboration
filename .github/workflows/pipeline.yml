@@ -48,10 +48,6 @@ jobs:
       - name: Lint with flake8
         run: make l
 
-      - name: Make migrations
-        shell: bash
-        run: make m && make mn
-
       - name: Run tests and generate report
         shell: bash
         run: |
