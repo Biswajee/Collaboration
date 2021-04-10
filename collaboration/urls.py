@@ -27,7 +27,7 @@ urlpatterns = [
     url(r"^admin/", admin.site.urls),
     url(r"", include("dashboard.urls")),
     url(r"doc/", include("docviewer.urls")),
-    url(r"slide/", include("slideviewer.urls")),
+    # url(r"slide/", include("slideviewer.urls")),
     url(r"api/", include("mediaAPI.urls")),
     url(r"d3/", include("visualizations.urls")),
 ]

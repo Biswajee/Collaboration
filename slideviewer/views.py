@@ -2,7 +2,7 @@ import os
 import time
 
 # import comtypes.client
-import win32com.client
+# import win32com.client
 from django.shortcuts import redirect, render
 from pythoncom import CoInitialize
 
@@ -12,20 +12,21 @@ from .models import slide_files, slides
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PPT_ROOT = os.path.join(BASE_DIR, "media") + "\\"
 
-
+# TODO: win32com will be replaced by unoconv for CI/CD integration 
 def PPTtoPDF(inputFileName, outputFileName, formatType=32):
-    CoInitialize()
-    powerpoint = win32com.client.Dispatch("Powerpoint.Application")
-    # powerpoint = comtypes.client.CreateObject("Powerpoint.Application")
-    powerpoint.Visible = 1
+    pass
+#     CoInitialize()
+#     powerpoint = win32com.client.Dispatch("Powerpoint.Application")
+#     # powerpoint = comtypes.client.CreateObject("Powerpoint.Application")
+#     powerpoint.Visible = 1
 
-    if outputFileName[-3:] != "pdf":
-        outputFileName = outputFileName + ".pdf"
-        print(outputFileName)
-    deck = powerpoint.Presentations.Open(inputFileName)
-    deck.SaveAs(outputFileName, formatType)  # formatType = 32 for ppt to pdf
-    deck.Close()
-    powerpoint.Quit()
+#     if outputFileName[-3:] != "pdf":
+#         outputFileName = outputFileName + ".pdf"
+#         print(outputFileName)
+#     deck = powerpoint.Presentations.Open(inputFileName)
+#     deck.SaveAs(outputFileName, formatType)  # formatType = 32 for ppt to pdf
+#     deck.Close()
+#     powerpoint.Quit()
 
 
 def index(request):
