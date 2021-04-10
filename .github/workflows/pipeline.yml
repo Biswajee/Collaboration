@@ -50,6 +50,7 @@ jobs:
           make i
 
       - name: Lint with flake8
+        shell: bash
         run: make l
 
       - name: Run tests and generate report
