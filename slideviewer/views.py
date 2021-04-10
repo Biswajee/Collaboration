@@ -4,7 +4,7 @@ import time
 # import comtypes.client
 # import win32com.client
 from django.shortcuts import redirect, render
-from pythoncom import CoInitialize
+# from pythoncom import CoInitialize
 
 from .forms import slide_upload
 from .models import slide_files, slides
@@ -12,7 +12,8 @@ from .models import slide_files, slides
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PPT_ROOT = os.path.join(BASE_DIR, "media") + "\\"
 
-# TODO: win32com will be replaced by unoconv for CI/CD integration 
+
+# TODO: win32com will be replaced by unoconv for CI/CD integration
 def PPTtoPDF(inputFileName, outputFileName, formatType=32):
     pass
 #     CoInitialize()
