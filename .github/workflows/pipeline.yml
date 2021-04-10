@@ -28,7 +28,7 @@ jobs:
       - name: Run apt update
         run: | 
           sudo apt update
-          ls -al
+          sudo apt upgrade
         shell: bash
 
       - name: Install MySQL client
@@ -37,7 +37,7 @@ jobs:
           # install the client
           sudo apt install mysql-server
           # run security scan
-          sudo Collaboration/mysql_secure.sh
+          ./mysql_secure.sh
 
       - name: Install requirements
         shell: bash
