@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
     'docviewer',
-    'slideviewer',
+    # 'slideviewer',
     'mediaAPI',
     'visualizations',
     'rest_framework',
