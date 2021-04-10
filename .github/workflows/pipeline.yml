@@ -57,8 +57,6 @@ jobs:
         shell: bash
         run: |
           make t
-          coverage run --source='.' make t
-          coverage report
 
   # codacy-security-scan:
   #   name: Codacy Security Scan
