@@ -46,8 +46,7 @@ update: ## target: update - install (and update) pip requirements, alias i
 l: lint
 lint:
 	pip3 install flake8
-	# exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-	flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+	flake8 .
 
 collect: ## target: collect - calls the "collectstatic" django command
 	django-admin.py collectstatic --settings=$(SETTINGS) --noinput
