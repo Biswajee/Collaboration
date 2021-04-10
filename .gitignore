@@ -1,18 +1,21 @@
+# workspaces
+.vscode/*
+.idea/*
+.DS_Store/*
+
 # pycache files
 *.pyc
 
 # uploaded media files
-media/
+media/*
 
 # database migrations
-dashboard/migrations/
-docviewer/migrations/
-mediaAPI/migrations/
-slideviewer/migrations/
+**/migrations/**
 
-
-# skip high quality animation uploads
+# ignore media files
 *.mp4
+*.pdf
+*.mp3
 
-# jupyter notebook checkpoints
+# ipynb checkpoints
 preprocessing/.ipynb_checkpoints/*

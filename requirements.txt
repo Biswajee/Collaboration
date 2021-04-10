@@ -1,11 +1,14 @@
-certifi==2018.11.29
-comtypes==1.1.7
-Django==1.11.29
-django-crispy-forms==1.7.2
-django-mysql==2.4.1
-djangorestframework==3.11.2
-mysqlclient==1.4.2.post1
-Pillow==8.1.1
-pytz==2018.9
-pywin32==224
-wincertstore==0.2
+certifi>=2020.12.5
+comtypes>=1.1.9
+Django>=3.1.7
+django-crispy-forms>=1.11.2
+django-mysql>=3.11.1
+djangorestframework>=3.12.4
+mysqlclient>=1.4.2.post1
+Pillow>=8.2.0
+pytz>=2021.1
+wincertstore>=0.2
+
+# test dependencies
+pytest>=6.2.3
+coverage>=5.5
